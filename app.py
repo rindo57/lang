@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key"  # Replace with a strong secret key
 
 # MongoDB Connection
-client = MongoClient("mongodb://localhost:27017/")  # Replace with your connection string
+client = MongoClient("mongodb+srv://720pp:fire@cluster0.ser1dtu.mongodb.net/?retryWrites=true&w=majority")  # Replace with your connection string
 db = client["language_exchange"]  # Replace with your database name
 users = db["users"]
 messages = db["messages"]
