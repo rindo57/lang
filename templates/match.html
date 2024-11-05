@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Match</title>
+</head>
+<body>
+    <h1>Potential Language Exchange Partners</h1>
+
+    {% if matches %}
+        <ul>
+            {% for match in matches %}
+                <li>
+                    <a href="{{ url_for('messages', recipient_id=match['_id']) }}">
+                        {{ match['username'] }} (Native: {{ match['native_language'] }}, Learning: {{ match['learning_language'] }})
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No matches found. Please try again later.</p>
+    {% endif %}
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html> 
